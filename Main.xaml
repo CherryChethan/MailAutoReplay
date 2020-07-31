@@ -76,7 +76,7 @@
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Email Auto replay " sap:VirtualizedContainerService.HintSize="554,1100" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Email Auto replay " sap:VirtualizedContainerService.HintSize="741,1441" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="Password" />
           <Variable x:TypeArguments="x:String" Default="cherrychethan22@gmail.com" Name="mailID" />
@@ -90,7 +90,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="512,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign sap:VirtualizedContainerService.HintSize="699,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[out_Config]</OutArgument>
           </Assign.To>
@@ -98,7 +98,7 @@
             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[new Dictionary(of String, Object)]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ReadRange AddHeaders="True" DataTable="[ConfigDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="512,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Config.xlsx">
+        <ui:ReadRange AddHeaders="True" DataTable="[ConfigDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="699,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Config.xlsx">
           <ui:ReadRange.Range>
             <InArgument x:TypeArguments="x:String">
               <Literal x:TypeArguments="x:String" Value="" />
@@ -111,7 +111,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ReadRange>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ConfigDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="512,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ConfigDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="699,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -135,65 +135,77 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
-        <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="512,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8AFFiOALzkWTtnaS9Yp9AAAAAAACAAAAAAAQZgAAAAEAACAAAAAfoHoH5Ro19IUfH8hcdBE6mmmgf6KK5jdza+Costr1DwAAAAAOgAAAAAIAACAAAADRluHSWjW0ahfzI+NDVc6eQrtoNd42Qh1m5jlwlO329SAAAACFE+oKQmSrwVoOxE376r2Q9FtYsckQKpJeAfnTB2ctyEAAAABxXXdUYiz6g3RrC2e+jFHS6s3zDnXJY99PDEKUj/51lDKOrlY1qpYgUt+ZSrPflW2fAKise3TfZP/aD1XCnH2A" Result="[Password]" />
-        <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[mailID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="512,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[MAilOP]" OnlyUnreadMessages="True" Password="[Password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="1" />
-        <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="512,602" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[MAilOP]">
+        <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="699,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8AFFiOALzkWTtnaS9Yp9AAAAAAACAAAAAAAQZgAAAAEAACAAAAAfoHoH5Ro19IUfH8hcdBE6mmmgf6KK5jdza+Costr1DwAAAAAOgAAAAAIAACAAAADRluHSWjW0ahfzI+NDVc6eQrtoNd42Qh1m5jlwlO329SAAAACFE+oKQmSrwVoOxE376r2Q9FtYsckQKpJeAfnTB2ctyEAAAABxXXdUYiz6g3RrC2e+jFHS6s3zDnXJY99PDEKUj/51lDKOrlY1qpYgUt+ZSrPflW2fAKise3TfZP/aD1XCnH2A" Result="[Password]" />
+        <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[mailID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="699,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[MAilOP]" OnlyUnreadMessages="True" Password="[Password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="5" />
+        <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="699,943" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[MAilOP]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="snm:MailMessage">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,468" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="663,809" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,376" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                  <TryCatch.Try>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,436" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <If Condition="[item.Subject.Contains(&quot;Testing&quot;) Or item.Subject.Contains(&quot;testing&quot;)]" sap:VirtualizedContainerService.HintSize="621,717" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="476,569" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[FromEmail]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[item.From.Address]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <ui:Matches sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[FromEmail]" IsBuilderTabModified="False" Pattern="([^\d]+)([\d]+)(?=@)" RegexOption="IgnoreCase" Result="[Match]" />
-                      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(out_Config(&quot;Body&quot;).ToString,Match(0).Groups(1).tostring)]" DisplayName="Send SMTP Mail Message" Email="[mailID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="[Password]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Re : &quot;+ item.Subject + &quot; replay by bot&quot;]" To="[item.From.Address]">
-                        <ui:SendMail.Files>
-                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                        </ui:SendMail.Files>
-                      </ui:SendMail>
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,376" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch.Try>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,436" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[FromEmail]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[item.From.Address]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:Matches sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[FromEmail]" IsBuilderTabModified="False" Pattern="([^\d]+)([\d]+)(?=@)" RegexOption="IgnoreCase" Result="[Match]" />
+                            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(out_Config(&quot;Body&quot;).ToString,Match(0).Groups(1).tostring)]" DisplayName="Send SMTP Mail Message" Email="[mailID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="[Password]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Re : &quot;+ item.Subject]" To="[item.From.Address]">
+                              <ui:SendMail.Files>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                              </ui:SendMail.Files>
+                            </ui:SendMail>
+                          </Sequence>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,214" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(out_Config(&quot;Body&quot;).ToString,Split(item.From.Address,&quot;@&quot;)(0).ToString)]" DisplayName="Send SMTP Mail Message" Email="[mailID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="True" Password="[Password]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Re : &quot;+ item.Subject]" To="[item.From.Address]">
+                                <ui:SendMail.Files>
+                                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                                </ui:SendMail.Files>
+                              </ui:SendMail>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Complet-------------" />
                     </Sequence>
-                  </TryCatch.Try>
-                  <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,214" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ActivityAction x:TypeArguments="s:Exception">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                        </ActivityAction.Argument>
-                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(out_Config(&quot;Body&quot;).ToString,Split(item.From.Address,&quot;@&quot;)(0).ToString)]" DisplayName="Send SMTP Mail Message" Email="[mailID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="True" Password="[Password]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Re : &quot;+ item.Subject + &quot; replay by bot&quot;]" To="[item.From.Address]">
-                          <ui:SendMail.Files>
-                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                          </ui:SendMail.Files>
-                        </ui:SendMail>
-                      </ActivityAction>
-                    </Catch>
-                  </TryCatch.Catches>
-                </TryCatch>
+                  </If.Then>
+                </If>
               </Sequence>
             </ActivityAction>
           </ui:ForEach.Body>
