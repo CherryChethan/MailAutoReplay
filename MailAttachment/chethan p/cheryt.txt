@@ -1,0 +1,9 @@
+Today Update
+When am doing what'sup app automation i get one issue i.e selector problem and i solved it by taking dinamic selector 
+after that i read the data from excel sheet and i want to update status like message sent in this i get one issue i.e for some contact its not update but bot run properly and i solve that issue also.
+i work on drop down list but i didnt get the api and i cant automate it wasa high secure selectors are change for every feald so i failed and i search in google also but i didn't get the solution for that but one of the developer text me in uiform, he said its so difficult to automate the facebook but iwill try that i get tempravary solution.     
+ 
+i face three challange 
+1. selector 
+2. security crack
+3.partial o/p in excel(but bot run properly)
